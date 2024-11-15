@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read More Poems</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div id="read-more-container">
+    <h1 class="fade-in">More Poems for You</h1>
+
+    <!-- List of Poems -->
+    <div id="poem-list">
+      <button onclick="showPoem('poem1')" class="poem-button fade-in">Poem 1</button>
+      <button onclick="showPoem('poem2')" class="poem-button fade-in">Poem 2</button>
+      <button onclick="showPoem('poem3')" class="poem-button fade-in">Poem 3</button>
+    </div>
+
+    <!-- Selected Poem Display -->
+    <div id="selected-poem" style="display: none;">
+      <p id="selected-poem-content" class="poem-text fade-in"></p>
+      <!-- Play Again Button -->
+      <button id="play-again-btn" class="poem-button" style="display: none;">Play Again</button>
+      <button onclick="backToList()" class="poem-button">Back to Poems</button>
+      <button onclick="location.href= 'index.html'" class="poem-button">Home</button>
+    </div>
+  </div>
+
+  <script src="readmore.js"></script>
+</body>
+</html>
