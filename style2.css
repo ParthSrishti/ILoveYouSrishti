@@ -1,0 +1,428 @@
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(145deg, #ff99cc, #ff66b2);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1, h2 {
+  color: #ffccf2;
+  font-weight: bold;
+}
+
+/* Containers Styling */
+#landing, #question, #poem, #read-more-container, #selected-poem {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#landing:hover, #question:hover, #poem:hover, #read-more-container:hover, #selected-poem:hover {
+  transform: scale(1.02);
+}
+/* Poem container with fixed height */
+#selected-poem-content {
+  height: 8em; /* Adjust for the height of 4 lines */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Line styles */
+.line {
+  opacity: 0; /* Start invisible */
+  transition: opacity 1s ease-in-out; /* Smooth fade-in and fade-out */
+  margin: 5px 0;
+}
+
+/* Poem Text Styling */
+#poem-content {
+  height: 8em; /* Adjust for the height of 4 lines */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Line styles */
+.line {
+  opacity: 0; /* Start invisible */
+  transition: opacity 1s ease-in-out; /* Smooth fade-in and fade-out */
+  margin: 5px 0;
+}
+
+.line.visible {
+  opacity: 1;
+}
+
+/* Button Styling */
+/* Center the Play Again button below the poem */
+#play-again-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+#play-again-btn:hover {
+  transform: scale(1.1);
+}
+
+.button, .poem-button {
+  background-color: #ff66b2;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.button:hover, .poem-button:hover {
+  background-color: #ff3385;
+  box-shadow: 0 4px 8px rgba(255, 102, 178, 0.4);
+}
+
+.button.glow, .poem-button.glow {
+  box-shadow: 0 0 10px rgba(255, 102, 178, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button.glow:hover, .poem-button.glow:hover {
+  box-shadow: 0 0 20px rgba(255, 102, 178, 0.7);
+}
+
+/* Poem List Styling */
+#poem-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  margin-top: 15px;
+}
+
+/* Remove Bullets and Style Individual Poem Buttons */
+#poem-list button {
+  background-color: #ff66b2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#poem-list button:hover {
+  background-color: #ff3385;
+  transform: scale(1.05);
+}
+/* Container styling */
+#read-more-container {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Glow button styling */
+.button.glow {
+  background: #ff69b4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+}
+
+.button.glow:hover {
+  box-shadow: 0 0 20px rgba(255, 105, 180, 1);
+  transform: scale(1.1);
+}
+
+#start-btn{
+  background-color: #ff66b2;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+/* Click Me Button Styling */
+#click-me-btn{
+  background-color: #ff66b2;
+  color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  position: absolute;
+  left: 50%;  /* Center it horizontally */
+  top: 50%;   /* Center it vertically */
+  transform: translate(-50%, -50%); /* Center the button in the viewport */
+  transition: left 0.3s ease, top 0.3s ease; /* Smooth transition for position changes */
+}
+
+#click-me-btn {
+  position: relative;
+}
+
+#click-me-btn:hover,
+#start-btn:hover {
+  background-color: #ff3385;
+  box-shadow: 0 4px 8px rgba(255, 102, 178, 0.4);
+}
+
+.button.glow {
+  box-shadow: 0 0 10px rgba(255, 102, 178, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button.glow:hover {
+  box-shadow: 0 0 20px rgba(255, 102, 178, 0.7);
+}
+
+/* Feedback Message Styling */
+#feedback-message {
+    color: #ff3385;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hides any unwanted box */
+.hidden-box {
+  display: none;
+}
+
+
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Heart Title */
+.heart-title {
+  color: #ff69b4;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.heart {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Accordion styles */
+.accordion-item {
+  margin: 15px 0;
+}
+
+.accordion-title {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.accordion-title:hover {
+  background: #ff85c4;
+  box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.8);
+}
+
+.accordion-content {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  display: none;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #ffe6f2;
+  border: 1px solid #ff69b4;
+  text-align: left;
+  border-radius: 5px;
+}
+.accordion-content::-webkit-scrollbar {
+  width: 8px; /* Width of the scroll bar */
+}
+
+.accordion-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Color of the scroll bar */
+  border-radius: 10px;
+}
+
+.accordion-content::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the track */
+}
+.accordion-content p {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: #444;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Play Again Button */
+.play-again {
+  background: #ff69b4;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+  display: none; /* Hidden initially */
+}
+
+.play-again:hover {
+  background: #ff85c4;
+  box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.8);
+}
+
+/* Falling Stars Effect */
+.falling-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.falling-stars .star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  clip-path: circle(50%);
+  animation: fallStars 4s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fallStars {
+  0% {
+    transform: translateY(-10%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0.7;
+  }
+}
+
+/* Floating Hearts */
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-hearts .heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  clip-path: polygon(50% 0%, 61% 19%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 19%);
+  animation: fallHearts 3s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fallHearts {
+  0% {
+    transform: translateY(-10%) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) scale(0.8);
+    opacity: 0.7;
+  }
+}
+
+/* Fade In Animation for Line-by-Line */
+@keyframes fadeInLines {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Accordion Content Batch Fade-in */
+.accordion-content p.fade-in {
+  animation: fadeInLines 1s ease-in-out forwards;
+  opacity: 0;
+}

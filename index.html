@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I LOVE YOU SRISHTI</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <!-- Floating Hearts -->
+  <div class="floating-hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+
+  <!-- Landing Section -->
+  <div id="landing" class="landing-container">
+    <h1 id="surprise-message" style="display: none; margin-bottom: 20px;">Hey, ready for a little surprise?</h1>
+    <p id="feedback-message" style="margin-bottom: 20px;"></p>
+    <button id="click-me-btn" class="button glow">Click Me!</button>
+    <button id="start-btn" class="button" style="display: none; margin-top: 20px;">Let’s Begin</button>
+  </div>
+
+  <!-- Question Section -->
+  <div id="question" style="display: none;">
+    <p class="fade-in">Do you love me?</p>
+    <button onclick="answerYes()" class="button">Yes</button>
+    <button onclick="answerNo()" class="button">No</button>
+    <p id="response" class="fade-in"></p>
+  </div>
+
+  <!-- Poem Section -->
+  <div id="poem" class="poem-container" style="display: none;">
+    <h2 class="fade-in">My Poem for You</h2>
+    <p id="poem-content" class="poem-text"></p>
+    <!-- Play Again Button -->
+    <button id="play-again-btn" class="button glow" style="display: none;" onclick="playPoemAgain()">Play Again</button>
+    <!-- Read More Poems Button -->
+    <button id="read-more-btn" class="button glow" onclick="navigateToReadMore()">Read More Poems</button>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>
