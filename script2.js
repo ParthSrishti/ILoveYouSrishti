@@ -101,8 +101,9 @@ function displayPoemInBatches(lines, batchSize) {
 
       // Staggered fade-in for each line
       setTimeout(() => {
+        lineElem.style.transition = 'opacity 2s'; // Fade-in duration
         lineElem.style.opacity = '1';
-      }, i * 1500); // Adjust 500ms for stagger timing
+      }, i * 2500); // Adjust 2.5s for stagger timing
     });
 
     // Wait for all lines to fade in, then fade out the whole batch
@@ -110,8 +111,9 @@ function displayPoemInBatches(lines, batchSize) {
       batch.forEach((_, i) => {
         const lineElem = poemContent.children[i];
         setTimeout(() => {
+          lineElem.style.transition = 'opacity 3s'; // Fade-out duration
           lineElem.style.opacity = '0';
-        }, i * 2500); // Staggered fade-out
+        }, i * 1500); // Staggered fade-out
       });
 
       // Move to the next batch after fade-out
@@ -123,8 +125,8 @@ function displayPoemInBatches(lines, batchSize) {
           // Show "Play Again" button at the end of the poem
           playAgainBtn.style.display = 'block';
         }
-      }, batchSize * 500 + 1000); // Wait for fade-out and transition time
-    }, batchSize * 500 + 1000); // Wait for fade-in to complete
+      }, batchSize * 1500 + 3000); // Wait for fade-out and transition time
+    }, batchSize * 2500 + 3000); // Wait for fade-in to complete
   }
 
   showBatch(); // Start displaying the first batch
